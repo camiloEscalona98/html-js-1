@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <LINK REL=StyleSheet HREF="index.css" TYPE="text/css" MEDIA=screen>
+
+
+    <script type="text/javascript">
+
+        function validar(formulario) {
+
+
+            if (formulario.txt_numero.value.length == 0) {
+                alert("Ingresa un numero");
+                return false
+            }
+            if (isNaN(parseInt(formulario.txt_numero.value))) {
+                alert("Solo debe ingresar valores numericos");
+                document.getElementById("forma").reset();
+                return false;
+            }
+            var numero = eval(formulario.txt_numero.value);
+            serie(numero);
+            return true
+
+
+        }
+
+
+        function serie(numero) {
+           
+           var arreglo = [];
+           
+           for(var i = 0; i<numero; i++ ){
+               if(i==0){
+                   arreglo.push(0);
+                   
+               }
+               else if(i==1){
+                   arreglo.push(1);
+                  
+                
+               }
+               else{
+                   var suma = arreglo[i-1]+arreglo[i-2];
+                   arreglo.push(suma)
+               }
+           }
+           alert(arreglo);
+           
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <section>
+        <form name="forma" onsubmit="return validar(this)">
+            <div class="centro">
+            <div class="forma">
+                <div>
+
+                    <input type="text" placeholder="Ingresa numero" name="txt_numero">
+                </div>
+                <div>
+                    <input type="submit" value="Realizar" name="Realizar">
+                </div>
+                
+            </div>
+        </div>
+        </form>
+    </section>
+
+
+</body>
+
+</html>

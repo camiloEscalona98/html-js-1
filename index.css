@@ -1,0 +1,16 @@
+
+.forma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    width: 450px;
+    height: 450px;
+}
+.centro{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
